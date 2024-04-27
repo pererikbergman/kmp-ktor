@@ -1,4 +1,4 @@
-package com.rakangsoftware.sqldelight
+package com.rakangsoftware.ktor
 
 import App
 import android.os.Bundle
