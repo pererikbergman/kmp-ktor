@@ -34,6 +34,9 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+
+            // Ktor for networking
+            implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -45,9 +48,22 @@ kotlin {
 
             // ViewModel
             implementation(libs.mvvm.compose)
+
+            // Ktor for networking
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.ktor.client.logging)
+        }
+        iosMain.dependencies {
+            // Ktor for networking
+            implementation(libs.ktor.client.darwin)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+
+            // Ktor for networking
+            implementation(libs.ktor.client.java)
         }
     }
 }
