@@ -1,7 +1,7 @@
-package post.domain.post
+package post.domain.model
 
 import core.Result
-import core.database.DataError
+import core.network.DataError
 import kotlinx.coroutines.flow.Flow
 
 interface PostRepository {

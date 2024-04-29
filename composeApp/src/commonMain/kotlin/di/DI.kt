@@ -1,15 +1,19 @@
 package di
 
+import core.data.remote.network.HttpClientFactory
 import post.PostScreenUseCases
 import post.PostScreenViewModel
-import post.data.post.PostRepositoryMemory
+import post.data.PostDataSourceKtor
+import post.data.PostRepositoryKtor
 import post.domain.usecase.GetAllPostsUseCase
 
 fun createViewModel(): PostScreenViewModel {
     return PostScreenViewModel(
         PostScreenUseCases(
             GetAllPostsUseCase(
-                PostRepositoryMemory()
+                PostRepositoryKtor(
+                    PostDataSourceKtor(HttpClientFactory().createHttpClient())
+                )
             )
         )
     )

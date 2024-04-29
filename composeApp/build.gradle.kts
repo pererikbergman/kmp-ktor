@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+
+    kotlin("plugin.serialization") version libs.versions.kotlin
 }
 
 kotlin {
@@ -48,6 +50,9 @@ kotlin {
 
             // ViewModel
             implementation(libs.mvvm.compose)
+
+            // Kotlin Coroutines
+//            implementation(libs.kotlinx.coroutines.core)
 
             // Ktor for networking
             implementation(libs.ktor.client.core)

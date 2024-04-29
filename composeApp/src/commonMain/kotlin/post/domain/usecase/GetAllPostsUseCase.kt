@@ -1,10 +1,10 @@
 package post.domain.usecase
 
 import core.Result
-import core.database.DataError
+import core.network.DataError
 import kotlinx.coroutines.flow.first
-import post.domain.post.Post
-import post.domain.post.PostRepository
+import post.domain.model.Post
+import post.domain.model.PostRepository
 
 class GetAllPostsUseCase(
     private val postRepository: PostRepository

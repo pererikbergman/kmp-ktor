@@ -1,7 +1,5 @@
 package post
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import core.Result
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import kotlinx.coroutines.Dispatchers
@@ -11,7 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import post.domain.post.Post
+import post.domain.model.Post
 
 class PostScreenViewModel(
     private val useCases: PostScreenUseCases

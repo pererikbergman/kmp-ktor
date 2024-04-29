@@ -1,24 +1,24 @@
-package post.data.post
+package post.data
 
 import core.Result
-import core.database.DataError
+import core.network.DataError
 import kotlinx.coroutines.flow.flow
-import post.domain.post.Post
-import post.domain.post.PostRepository
+import post.domain.model.Post
+import post.domain.model.PostRepository
 
 class PostRepositoryMemory() : PostRepository {
 
     private val posts = mutableListOf(
-        Post(1, "Julia", "Discovering Space", "The cosmos is vast and beautiful.", "2024-04-18", "2024-04-18"),
-        Post(2, "Marco", "Java vs Python", "Comparing two powerful languages.", "2024-04-18", "2024-04-18"),
-        Post(3, "Emily", "Gardening Tips", "Learn to grow your own herbs.", "2024-04-18", "2024-04-18"),
-        Post(4, "Raj", "Mysteries of History", "Exploring ancient civilizations.", "2024-04-18", "2024-04-18"),
-        Post(5, "Sarah", "Healthy Eating", "Balanced diets for a busy life.", "2024-04-18", "2024-04-18"),
-        Post(6, "Alex", "Marathon Training", "Preparing for your first race.", "2024-04-18", "2024-04-18"),
-        Post(7, "Lena", "Photography Basics", "Capture stunning landscapes.", "2024-04-18", "2024-04-18"),
-        Post(8, "Tom", "Future of AI", "How AI is changing our world.", "2024-04-18", "2024-04-18"),
-        Post(9, "Sophia", "World Cuisine", "Exploring flavors from around the globe.", "2024-04-18", "2024-04-18"),
-        Post(10, "Miguel", "Space Exploration", "Journey to the stars and beyond.", "2024-04-18", "2024-04-18")
+        Post(1, 2, "Discovering Space", "The cosmos is vast and beautiful."),
+        Post(2, 2, "Java vs Python", "Comparing two powerful languages."),
+        Post(3, 3, "Gardening Tips", "Learn to grow your own herbs."),
+        Post(4, 3, "Mysteries of History", "Exploring ancient civilizations."),
+        Post(5, 4, "Healthy Eating", "Balanced diets for a busy life."),
+        Post(6, 5, "Marathon Training", "Preparing for your first race."),
+        Post(7, 6, "Photography Basics", "Capture stunning landscapes."),
+        Post(8, 6, "Future of AI", "How AI is changing our world."),
+        Post(9, 7, "World Cuisine", "Exploring flavors from around the globe."),
+        Post(10, 9, "Space Exploration", "Journey to the stars and beyond.")
     )
 
     override fun fetchAll() = flow<Result<List<Post>, DataError>> {
