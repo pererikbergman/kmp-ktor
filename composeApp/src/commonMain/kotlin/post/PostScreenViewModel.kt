@@ -15,9 +15,6 @@ class PostScreenViewModel(
     private val useCases: PostScreenUseCases
 ) : ViewModel() {
 
-//    private var _uiState = mutableStateOf(UIState())
-//    val uiState: State<UIState> = _uiState
-
     private var _uiState = MutableStateFlow(UIState())
     val uiState: StateFlow<UIState>
         get() = _uiState
